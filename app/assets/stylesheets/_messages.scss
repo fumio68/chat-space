@@ -1,3 +1,18 @@
 * {
   box-sizing: border-box;
 }
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.side-bar {
+  width: 300px;
+  background: #253141;
+}
+
+.chat-main {
+  width: calc(100vh - 300px);
+  background: #ffffff;
+}
