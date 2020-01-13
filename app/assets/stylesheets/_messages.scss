@@ -9,10 +9,25 @@
 
 .side-bar {
   width: 300px;
-  background: #253141;
+  background: #2f3e51;
+  .side-bar__user-name{
+    height: 100px;
+    background: #253141;
+  }
 }
 
 .chat-main {
-  width: calc(100vh - 300px);
+  width: calc(100vw - 300px);
   background: #ffffff;
+  .chat-main__group-info{
+    height: 100px;
+  }
+  .chat-main__message-list{
+    height: calc(100vh - 100px - 90px);
+    background: #fafafa;
+  }
+  .chat-main__message-form{
+    height: 90px;
+    background: #d2d2d2;
+  }
 }
