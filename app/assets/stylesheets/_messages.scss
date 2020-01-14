@@ -10,23 +10,54 @@
 .side-bar {
   width: 300px;
   background: #2f3e51;
-  .side-bar__user-name{
+  .side-header{
     height: 100px;
     background: #253141;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    .side-header__box{
+      height: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .side-header__box__username{
+        font-size: 16px;
+        color: #ffffff;
+        line-height: 20px;
+        font-weight: bold;
+      }
+      .side-header__box__icons{
+        width: 60px;
+        text-align: right;
+        li{
+          display: inline;
+        }
+        .group-edit{
+          color: #ffffff;
+          text-decoration: none;
+          margin-right: 5px;
+        }
+        .edit-user{
+          color: #ffffff;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
 
-.chat-main {
+.main-chat {
   width: calc(100vw - 300px);
   background: #ffffff;
-  .chat-main__group-info{
+  .main-header{
     height: 100px;
   }
-  .chat-main__message-list{
+  .main-chat__message-list{
     height: calc(100vh - 100px - 90px);
     background: #fafafa;
   }
-  .chat-main__message-form{
+  .main-chat__message-form{
     height: 90px;
     background: #d2d2d2;
   }

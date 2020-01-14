@@ -1,6 +1,19 @@
 .side-bar
-  .side-bar__user-name
-    .top-items
-      .top-items__name
-      .top-items__icons
+  .side-header
+    .side-header__box
+      %p.side-header__box__username
+        user-name
+      %ul.side-header__box__icons
+        %li
+          = link_to "#", class:"side-header__box__new-group" do
+            = icon('fas', 'edit', class: 'group-edit')
+            %span<>
+        %li
+          = link_to "#", class: "side-header__box__edit-user" do
+            = icon('fas', 'cog', class: 'edit-user')
+            %span<>
+
   .side-bar__group-list
+    .group
+      %p.side-header__box__username
+        user-name
