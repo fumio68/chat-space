@@ -5,12 +5,26 @@
       %ul.main-chat__header__left-box__member-list
         Member：
         %li.main-chat__header__left-box__member   user-name
-    %div= link_to 'Edit', "#", class:"main-chat__header__edit-btn"
-  
+    = link_to 'Edit', "#", class:"main-chat__header__edit-btn"
+
   .main-chat__message-list
     .main-chat__message-list__message
       .main-chat__message-list__message__top-box
         %p.main-chat__message-list__message__top-box__user-name user-name
         %p.main-chat__message-list__message__top-box__date 2020/01/14(Tue)14:25:10
       %p.main-chat__message-list__message__text こんにちは
-  .main-chat__message-form
+    .main-chat__message-list__message
+      .main-chat__message-list__message__top-box
+        %p.main-chat__message-list__message__top-box__user-name user-name
+        %p.main-chat__message-list__message__top-box__date 2020/01/14(Tue)14:25:10
+      %p.main-chat__message-list__message__text こんにちは
+
+  .main-chat__form
+    %form.main-chat__form__new-message
+      .main-chat__form__new-message__input-box
+        %input.main-chat__form__new-message__input-box__text{placeholder:"type a message", type:"text"}
+        %label.main-chat__form__new-message__input-box__image
+          = icon('fa', 'image')
+          %input.main-chat__form__new-message__input-box__image__file{type: "file"}
+      %input.main-chat__form__submit-btn{type: "submit", value:"Send"}
+
