@@ -10,24 +10,24 @@
 .side-bar {
   width: 300px;
   background: #2f3e51;
-  .side-header{
+  .side-bar__header{
     height: 100px;
     background: #253141;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    .side-header__box{
+    .side-bar__header__box{
       height: 20px;
       width: 100%;
       display: flex;
       justify-content: space-between;
-      .side-header__box__username{
+      .side-bar__header__box__username{
         font-size: 16px;
         color: #ffffff;
         line-height: 20px;
         font-weight: bold;
       }
-      .side-header__box__icons{
+      .side-bar__header__box__icons{
         width: 60px;
         text-align: right;
         li{
@@ -47,15 +47,15 @@
   }
   .side-bar__group-list{
     padding: 20px 20px 0;
-    .group-list{
+    .side-bar__group-list__group{
       color: #ffffff;
       font-weight: bold;
       margin-bottom: 40px;
-      .group-list__group-name{
+      .side-bar__group-list__group__group-name{
         font-size: 15px;
         margin-bottom: 5px;
       }
-      .group-list__message{
+      .side-bar__group-list__group__message{
         font-size: 11px;
       }
     }
@@ -65,22 +65,55 @@
 .main-chat {
   width: calc(100vw - 300px);
   background: #ffffff;
-  .main-header{
+  .main-chat__header{
     height: 100px;
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
-    .main-header__left-box{
-      background: lightblue;
-      
+    .main-chat__header__left-box{
+      margin-top: 35px;
+      .main-chat__header__left-box__current-group{
+        font-size: 20px;
+        color: #333333;
+        margin-bottom: 15px;
+      }
+      .main-chat__header__left-box__member-list{
+        display: flex;
+        color: #999999;
+        font-size: 12px;
+      }
     }
-    .main-header__edit-btn{
-      background: green;
+    .main-chat__header__edit-btn{
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      line-height: 40px;
+      color: #38aef0;
+      font-size: 16px;
+      height: 40px;
+      width: 72px;
+      border: 1px solid #38aef0;
+      margin-top: 28px;
     }
   }
   .main-chat__message-list{
     height: calc(100vh - 100px - 90px);
     background: #fafafa;
+    padding: 46px 40px;
+    &__message{
+      &__top-box{
+        display: flex;
+        margin-bottom: 12px;
+        &__user-name{
+          color: #333333;
+          font-size: 16px;
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+        }
+      }
+    }
   }
   .main-chat__message-form{
     height: 90px;

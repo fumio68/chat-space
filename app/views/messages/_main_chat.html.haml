@@ -1,12 +1,16 @@
 .main-chat
-  .main-header
-    .main-header__left-box
-      %h2.main-header__left-box__current-group test
-      %ul.main-header__left-box__member-list
-        Member:
-        %li.main-header__left-box__member user-name
-    .main-header__edit-btn
-      = link_to "#", class:"side-header__box__new-group" do
-        Edit
+  .main-chat__header
+    .main-chat__header__left-box
+      %h2.main-chat__header__left-box__current-group test
+      %ul.main-chat__header__left-box__member-list
+        Member：
+        %li.main-chat__header__left-box__member   user-name
+    %div= link_to 'Edit', "#", class:"main-chat__header__edit-btn"
+  
   .main-chat__message-list
+    .main-chat__message-list__message
+      .main-chat__message-list__message__top-box
+        %p.main-chat__message-list__message__top-box__user-name user-name
+        %p.main-chat__message-list__message__top-box__date 2020/01/14(Tue)14:25:10
+      %p.main-chat__message-list__message__text こんにちは
   .main-chat__message-form

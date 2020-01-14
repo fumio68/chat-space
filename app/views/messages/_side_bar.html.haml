@@ -1,9 +1,9 @@
 .side-bar
-  .side-header
-    .side-header__box
-      %p.side-header__box__username
+  .side-bar__header
+    .side-bar__header__box
+      %p.side-bar__header__box__username
         user-name
-      %ul.side-header__box__icons
+      %ul.side-bar__header__box__icons
         %li
           = link_to "#", class:"side-header__box__new-group" do
             = icon('fas', 'edit', class: 'group-edit')
@@ -14,13 +14,9 @@
             %span<>
 
   .side-bar__group-list
-    .group-list
-      %p.group-list__group-name
-        techcamp
-      %p.group-list__message
-        まだメッセージがありません
-    .group-list
-      %p.group-list__group-name
-        techcamp
-      %p.group-list__message
-        まだメッセージがありません
+    .side-bar__group-list__group
+      %p.side-bar__group-list__group__group-name techcamp
+      %p.side-bar__group-list__group__message まだメッセージがありません
+    .side-bar__group-list__group
+      %p.side-bar__group-list__group__group-name techcamp
+      %p.side-bar__group-list__group__message まだメッセージがありません
