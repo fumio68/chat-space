@@ -45,6 +45,21 @@
       }
     }
   }
+  .side-bar__group-list{
+    padding: 20px 20px 0;
+    .group-list{
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 40px;
+      .group-list__group-name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      .group-list__message{
+        font-size: 11px;
+      }
+    }
+  }
 }
 
 .main-chat {
@@ -52,6 +67,16 @@
   background: #ffffff;
   .main-header{
     height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    .main-header__left-box{
+      background: lightblue;
+      
+    }
+    .main-header__edit-btn{
+      background: green;
+    }
   }
   .main-chat__message-list{
     height: calc(100vh - 100px - 90px);
