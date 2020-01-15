@@ -1,0 +1,22 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header__box
+      %p.side-bar__header__box__username
+        user-name
+      %ul.side-bar__header__box__icons
+        %li
+          = link_to "#", class:"side-header__box__new-group" do
+            = icon('fas', 'edit', class: 'group-edit')
+            %span<>
+        %li
+          = link_to "#", class: "side-header__box__edit-user" do
+            = icon('fas', 'cog', class: 'edit-user')
+            %span<>
+
+  .side-bar__group-list
+    .side-bar__group-list__group
+      %p.side-bar__group-list__group__group-name techcamp
+      %p.side-bar__group-list__group__message まだメッセージがありません
+    .side-bar__group-list__group
+      %p.side-bar__group-list__group__group-name techcamp
+      %p.side-bar__group-list__group__message まだメッセージがありません
