@@ -2,14 +2,14 @@
   .side-bar__header
     .side-bar__header__box
       %p.side-bar__header__box__username
-        user-name
+        = currnet_user.name
       %ul.side-bar__header__box__icons
         %li
           = link_to "#", class:"side-header__box__new-group" do
             = icon('fas', 'edit', class: 'group-edit')
             %span<>
         %li
-          = link_to "#", class: "side-header__box__edit-user" do
+          = link_to edit_user_path(currnet_user), class: "side-header__box__edit-user" do
             = icon('fas', 'cog', class: 'edit-user')
             %span<>
 
