@@ -14,9 +14,9 @@
             %span<>
 
   .side-bar__group-list
-    .side-bar__group-list__group
-      %p.side-bar__group-list__group__group-name techcamp
-      %p.side-bar__group-list__group__message まだメッセージがありません
-    .side-bar__group-list__group
-      %p.side-bar__group-list__group__group-name techcamp
-      %p.side-bar__group-list__group__message まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side-bar__group-list__group
+        = link_to '#', class:"side-bar__group-list__group__link" do
+          %p.side-bar__group-list__group__group-name
+            = group.name
+          %p.side-bar__group-list__group__message まだメッセージがありません
