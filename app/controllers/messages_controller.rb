@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
+
   def index
+
   end
 
   def create
@@ -13,6 +15,10 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:content, :image)
+  end
+
+  def set_group
+    @group = Group.find(params[:group_id])
   end
 
 end
