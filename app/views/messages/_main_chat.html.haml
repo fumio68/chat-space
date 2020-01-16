@@ -20,11 +20,12 @@
       %p.main-chat__message-list__message__text こんにちは
 
   .main-chat__form
-    %form.main-chat__form__new-message
-      .main-chat__form__new-message__input-box
-        %input.main-chat__form__new-message__input-box__text{placeholder:"type a message", type:"text"}
-        %label.main-chat__form__new-message__input-box__image
-          = icon('fa', 'image')
-          %input.main-chat__form__new-message__input-box__image__file{type: "file"}
-      %input.main-chat__form__submit-btn{type: "submit", value:"Send"}
+    = form_for [@group, @message] do |f|
+      .main-chat__form__box
+        =f.text_field :content, class:"main-chat__form__box__new-message", placeholder:"type a message"
+        .main-chat__form__label
+          = f.label :image, class: "main-chat__form__box__label__image" do
+            = icon('fa', 'image',class: "main-chat__form__box__label__image__icon")
+            = f.file_field :image, class: "main-chat__form__box__label__image__file"
+        =f.submit "Send", class: "main-chat__form__box__submit-btn"
 

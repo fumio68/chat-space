@@ -132,38 +132,35 @@
     height: 90px;
     background: #d2d2d2;
     padding: 20px 40px;
-    &__new-message{
+    position: relative;
+    &__box{
       display: flex;
-      &__input-box{
+      &__new-message{
         width: 100%;
-        position: relative;
-        &__text{
-          height: 50px;
-          width: 100%;
-          padding: 0 40px 0 10px;
-          color: #434a54;
-          border-style: none;
-        }
-        &__image{
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 25px;
-          cursor: pointer;
-          &__file{
-            display: none;
-          }
+        height: 50px;
+        padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+      }
+      &__label__image{
+        position: absolute;
+        top: 30px;
+        right: 160px;
+        font-size: 25px;
+        cursor: pointer;
+        &__file{
+          display: none;
         }
       }
-    }
-    &__submit-btn{
-      width: 100px;
-      height: 50px;
-      padding: 0 30px;
-      margin-left: 15px;
-      background: $btnColor;
-      color: white;
-      cursor: pointer;
+      &__submit-btn{
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background: $btnColor;
+        color: white;
+        cursor: pointer;
+      }
     }
   }
 }
