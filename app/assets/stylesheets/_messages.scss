@@ -53,6 +53,10 @@
       color: $sideBarText;
       font-weight: bold;
       margin-bottom: 40px;
+      &__link{
+        text-decoration: none;
+        color: $sideBarText;
+      }
       &__group-name{
         font-size: 15px;
         margin-bottom: 5px;
