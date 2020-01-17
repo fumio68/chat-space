@@ -27,10 +27,10 @@
 - belongs_to :user
 - belongs_to :group
 
-## postsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text||
+|content|text||
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
