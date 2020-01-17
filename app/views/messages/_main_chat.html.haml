@@ -1,28 +1,25 @@
 .main-chat
   .main-chat__header
     .main-chat__header__left-box
-      %h2.main-chat__header__left-box__current-group test
+      %h2.main-chat__header__left-box__current-group
+        = @group.name
       %ul.main-chat__header__left-box__member-list
         Member：
-        %li.main-chat__header__left-box__member   user-name
-    = link_to 'Edit', edit_group_path(current_user), class:"main-chat__header__edit-btn"
+        %li.main-chat__header__left-box__member
+        - @group.users.each do |group|
+          =group.name
+    .main-chat__header__edit-btn
+      = link_to edit_group_path(@group.id), class: "main-chat__header__edit-btn__text" do
+        Edit
 
   .main-chat__message-list
-    .main-chat__message-list__message
-      .main-chat__message-list__message__top-box
-        %p.main-chat__message-list__message__top-box__user-name user-name
-        %p.main-chat__message-list__message__top-box__date 2020/01/14(Tue)14:25:10
-      %p.main-chat__message-list__message__text こんにちは
-    .main-chat__message-list__message
-      .main-chat__message-list__message__top-box
-        %p.main-chat__message-list__message__top-box__user-name user-name
-        %p.main-chat__message-list__message__top-box__date 2020/01/14(Tue)14:25:10
-      %p.main-chat__message-list__message__text こんにちは
+    = render @messages
 
   .main-chat__form
     = form_for [@group, @message] do |f|
       .main-chat__form__box
-        =f.text_field :content, class:"main-chat__form__box__new-message", placeholder:"type a message"
+        .main-chat__form__box__textarea
+          =f.text_field :content, class:"main-chat__form__box__textarea__new-message", placeholder:"type a message"
         .main-chat__form__label
           = f.label :image, class: "main-chat__form__box__label__image" do
             = icon('fa', 'image',class: "main-chat__form__box__label__image__icon")
