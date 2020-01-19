@@ -135,9 +135,10 @@
     height: 90px;
     background: #d2d2d2;
     padding: 20px 40px;
-    position: relative;
+
     &__box{
       display: flex;
+      position: relative;
       &__textarea {
         width: 100%;
         &__new-message{
@@ -150,8 +151,8 @@
       }
       &__label__image{
         position: absolute;
-        top: 30px;
-        right: 160px;
+        top: 10px;
+        right: 125px;
         font-size: 25px;
         cursor: pointer;
         &__file{

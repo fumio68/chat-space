@@ -5,11 +5,11 @@
         = current_user.name
       %ul.side-bar__header__box__icons
         %li
-          = link_to new_group_path, class:"side-header__box__new-group" do
+          = link_to new_group_path do
             = icon('fas', 'edit', class: 'group-edit')
             %span<>
         %li
-          = link_to edit_user_path(current_user), class: "side-header__box__edit-user" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'edit-user')
             %span<>
 
