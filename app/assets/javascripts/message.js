@@ -3,16 +3,16 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-       `<div class="main-chat__message-list__message" data-message-id=${message.id}>
+      `<div class="main-chat__message-list__message" data-message-id=${message.id}>
           <div class="main-chat__message-list__message__top-box">
-            <div class="main-chat__message-list__message__top-box__user-name">
+            <p class="main-chat__message-list__message__top-box__user-name">
               ${message.user_name}
-            </div>
-            <div class="main-chat__message-list__message__top-box__date">
+            </p>
+            <p class="main-chat__message-list__message__top-box__date">
               ${message.created_at}
-            </div>
+            </p>
           </div>
-          <div class="ain-chat__message-list__message__text">
+          <div class="main-chat__message-list__message__text">
             <p class="lower-message__content">
               ${message.content}
             </p>
@@ -22,14 +22,14 @@ $(function(){
       return html;
     } else {
       var html =
-       `<div class="main-chat__message-list__message" data-message-id=${message.id}>
+      `<div class="main-chat__message-list__message" data-message-id=${message.id}>
           <div class="main-chat__message-list__message__top-box">
-            <div class="main-chat__message-list__message__top-box__user-name">
+            <p class="main-chat__message-list__message__top-box__user-name">
               ${message.user_name}
-            </div>
-            <div class="main-chat__message-list__message__top-box__date">
+            </p>
+            <p class="main-chat__message-list__message__top-box__date">
               ${message.created_at}
-            </div>
+            </p>
           </div>
           <div class="main-chat__message-list__message__text">
             <p class="lower-message__content">
@@ -55,6 +55,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
+      $('.main-chat__message-list').append(html);
+      $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
+      $('form')[0].reset();
     })
+   
   });
 });
