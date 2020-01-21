@@ -16,7 +16,7 @@ $(function(){
             `<p class="lower-message__content">` +
               message.content +
             `</p>` +
-          `</div>`
+          `</div>` +
           `<img src="` + message.image + `" class="lower-message__image" >` +
         `</div>`
     } else if (message.content) {
@@ -93,16 +93,17 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.main-chat__message-list').append(insertHTML);
+        $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
         $("#new_message")[0].reset();
-        $(".form__submit").prop("disabled", false);
+        $(".main-chat__form__box__submit-btn").prop("disabled", false);
       }
-      }
-    })
+      })
     .fail(function() {
       console.log('error');
     });
   };
-  setInterval(reloadMessages, 7000);
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });
