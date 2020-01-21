@@ -3,51 +3,51 @@ $(function(){
   var buildHTML = function(message){
     if (message.content && message.image) {
       var html =
-        `<div class="main-chat__message-list__message" data-message-id=` + message.id + `>` +
-          `<div class="main-chat__message-list__message__top-box">` +
-            `<p class="main-chat__message-list__message__top-box__user-name">` +
-              message.user_name +
-            `</p>` +
-            `<p class="main-chat__message-list__message__top-box__date">` +
-              message.created_at +
-            `</p>` +
-          `</div>` +
-          `<div class="main-chat__message-list__message__text">` +
-            `<p class="lower-message__content">` +
-              message.content +
-            `</p>` +
-          `</div>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>`
+        `<div class="main-chat__message-list__message" data-message-id=${message.id}>
+          <div class="main-chat__message-list__message__top-box">
+            <p class="main-chat__message-list__message__top-box__user-name">
+              ${message.user_name}
+            </p>
+            <p class="main-chat__message-list__message__top-box__date">
+              ${message.created_at}
+            </p>
+          </div>
+          <div class="main-chat__message-list__message__text">
+            <p class="lower-message__content">
+              ${message.content}
+            </p>
+          </div>
+          <img src="${message.image}" class="lower-message__image" >
+        </div>`
     } else if (message.content) {
       var html =
-        `<div class="main-chat__message-list__message" data-message-id=` + message.id + `>` +
-          `<div class="main-chat__message-list__message__top-box">` +
-            `<p class="main-chat__message-list__message__top-box__user-name">` +
-              message.user_name +
-            `</p>` +
-            `<p class="main-chat__message-list__message__top-box__date">` +
-              message.created_at +
-            `</p>` +
-          `</div>` +
-          `<div class="main-chat__message-list__message__text">` +
-            `<p class="lower-message__content">` +
-              message.content +
-            `</p>` +
-          `</div>`
+        `<div class="main-chat__message-list__message" data-message-id=${message.id}>
+          <div class="main-chat__message-list__message__top-box">
+            <p class="main-chat__message-list__message__top-box__user-name">
+              ${message.user_name}
+            </p>
+            <p class="main-chat__message-list__message__top-box__date">
+              ${message.created_at}
+            </p>
+          </div>
+          <div class="main-chat__message-list__message__text">
+            <p class="lower-message__content">
+              ${message.content}
+            </p>
+          </div>`
     } else if (message.image) {
       var html =
-        `<div class="main-chat__message-list__message" data-message-id=` + message.id + `>` +
-          `<div class="main-chat__message-list__message__top-box">` +
-            `<p class="main-chat__message-list__message__top-box__user-name">` +
-              message.user_name +
-            `</p>` +
-            `<p class="main-chat__message-list__message__top-box__date">` +
-              message.created_at +
-            `</p>` +
-          `</div>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>`
+        `<div class="main-chat__message-list__message" data-message-id=${message.id}>
+          <div class="main-chat__message-list__message__top-box">
+            <p class="main-chat__message-list__message__top-box__user-name">
+              ${message.user_name}
+            </p>
+            <p class="main-chat__message-list__message__top-box__date">
+              ${message.created_at}
+            </p>
+          </div>
+          <img src="${message.image}" class="lower-message__image" >
+        </div>`
     };
       return html;
   };
@@ -95,12 +95,10 @@ $(function(){
         });
         $('.main-chat__message-list').append(insertHTML);
         $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
-        $("#new_message")[0].reset();
-        $(".main-chat__form__box__submit-btn").prop("disabled", false);
       }
       })
     .fail(function() {
-      console.log('error');
+      alert("通信エラーです");
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
